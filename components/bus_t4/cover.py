@@ -32,3 +32,4 @@ async def to_code(config):
 
     if CONF_USE_ADDRESS in config:
         cg.add(var.set_from_address(config[CONF_USE_ADDRESS]))
+
