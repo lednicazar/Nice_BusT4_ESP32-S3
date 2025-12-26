@@ -9,11 +9,7 @@ AUTO_LOAD = ["cover"]
 bus_t4_ns = cg.esphome_ns.namespace("bus_t4")
 Nice = bus_t4_ns.class_("NiceBusT4", cover.Cover, cg.Component, uart.UARTDevice)
 
-# Base schema compatible (2025.12.2 usa _COVER_SCHEMA)
-if hasattr(cover, "cover_schema"):
-    BASE_SCHEMA = cover.cover_schema(Nice)
-else:
-    BASE_SCHEMA = cover._COVER_SCHEMA
+BASE_SCHEMA = cover._COVER_SCHEMA
 
 CONFIG_SCHEMA = (
     BASE_SCHEMA.extend(
